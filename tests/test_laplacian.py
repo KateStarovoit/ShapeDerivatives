@@ -10,7 +10,8 @@ V = torch.tensor(v, requires_grad=True)
 
 F = torch.tensor(f, dtype=torch.long)
 [L_torch, i, j, val, tris] = shpy.cotangent_laplacian(V, F)
-Vs = V[tris[157]]
+Vs = V[tris[157]]:wq:wq
+
 # val[0].backward()
 torch.autograd.grad(val[157], V, retain_graph=True, )[0][tris[157]]
 loss = V.sum()
