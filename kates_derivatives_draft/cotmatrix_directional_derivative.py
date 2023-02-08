@@ -1,4 +1,7 @@
 #directional derivative for cot matrix
+'''
+TODO: Kate writes input and output
+'''
 def cotmatrix_directional_derivative(v, f, d):
     L_grad = np.zeros((len(v),(len(v))))
     dcotijdx = l_grad_entries_di(v,f,0)
