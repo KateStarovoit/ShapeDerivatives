@@ -1,6 +1,11 @@
 import torch
 
 #Gradient of the mass matrix
+#Input
+#V - n x 3 list or tensor of vertex positions
+#F - m x 3 ist or tensor of faces
+#Output
+#Mass matrix gradient
 def m_grad(v,f):
     M_grad = []
     for fi in f:
