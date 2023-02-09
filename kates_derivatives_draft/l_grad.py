@@ -1,4 +1,11 @@
-#full l_grad
+#Computes n x n l_grad for directional derivative
+'''
+Input
+V - n x 3 vertex positions
+F - m x 3 faces
+Output
+n x n cotmatrix grad matrix
+'''
 def l_grad(v,f):
     L_grad = np.zeros((len(v),(len(v))))
     cot_entries = l_grad_entries_assembled(v,f)
