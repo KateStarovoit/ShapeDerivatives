@@ -8,7 +8,7 @@ F - m x 3 faces
 d - n x 3 x 3 directions
 Output
 n x n cotmatrix directional derivative'''
-def cotmatrix_diractional_derivative(v,f,d):
+def cotmatrix_directional_derivative(v,f,d):
     L_grad = np.zeros((len(v),(len(v))))
     cot_entries = l_grad_entries(v,f)
     for i in range(len(f)):
