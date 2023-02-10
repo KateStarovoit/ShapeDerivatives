@@ -1,5 +1,7 @@
-#l_grad in one direction(dx, dy or dz)
-'''
+import numpy as np
+from l_grad_entries import l_grad_entries_di
+
+'''l_grad in one direction(dx, dy or dz)
 Input
 V - n x 3 vertex positions
 F - m x 3 faces
