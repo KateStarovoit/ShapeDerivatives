@@ -19,6 +19,24 @@ def grad_li(v, A_i):
     return grad
 
 
+'''l_grad entries for each face in one direction
+Input
+V - n x 3 number of vertex positions
+F - m x 3 number of faces
+di - scalar 0, 1 or 2 - directon
+Output
+n x 3 list of (3 x 3) gradient for each face
+for each of 3 angles of n triangles (3 x 3) entries'''
+def l_grad_entries_di(v,f,di):
+    cot_entries = l_grad_entries(v,f)
+    L_grad_assembled = np.zeros((len(f),3))
+    for i in range(len(cot_entries)):
+        for j in range(len(cot_entries[i])):
+            for k in range(len(cot_entries[i][j])):
+                 L_grad_assembled [i][j] += cot_entries[i][j][di][k]
+    return L_grad_assembled
+
+
 '''l_grad entries for each face
 Input
 V - n x 3 number of vertex positions
