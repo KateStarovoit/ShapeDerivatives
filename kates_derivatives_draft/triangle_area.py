@@ -1,11 +1,10 @@
 import torch
-import numpy as np
 
-#Area of one triangle
-#Input
-# V - 3 x 3 tensor of vertex positions
-#Output
-# a - traingle area
+'''Area of one triangle
+Input
+ V - 3 x 3 tensor of vertex positions
+Output
+ a - traingle area'''
 def triangle_area(V):
     s1 = torch.linalg.norm(V[0]-V[1])
     s2 = torch.linalg.norm(V[1]-V[2])
