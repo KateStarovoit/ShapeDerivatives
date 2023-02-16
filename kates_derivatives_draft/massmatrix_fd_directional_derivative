@@ -1,0 +1,19 @@
+from massmatrix import *
+
+'''Input
+v - n x 3 list or tensor of vertex positions
+f - m x 3 list of faces
+d - n x 3 direction for each coordinte of each vertex
+h - scalar - magnitude of translation
+Output
+M_fd - finite difference approximation
+  dM/dx:d = lim_{h->0}    (M(x +hd) - M(x))/h
+    (M(x+hd) - M(x))//h'''
+def translate_shape(V,d,h):
+  return V + d*h
+
+def massmatrix_fd_directional_derivative(V, F, d, h):
+  V_ = translate_shape(V,d,h)
+  M = (massmatrix(V,F))
+  M_ = (massmatrix(V_,F))
+  return (M_-M)/h
