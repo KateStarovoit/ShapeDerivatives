@@ -1,7 +1,21 @@
 from torch_lu import *
 from gp_torch_utils import *
 
-def optimize(v, f, b, S, bc, h = 0.01, n_iter = 10):
+
+'''
+Optimization using autograd
+Input
+v - n x 3 vertex positions
+f - m x 3 faces
+b - 
+S - selection matrix s x n
+bc - s values(boundary conditions we`re optimizing for)
+h - step
+n_iter - number of iterations
+Output
+v_opt - n x 3 optimized ertex positions
+'''
+def optimize(v, f, b, S, bc, h = 0.01, n_iter = 2):
     v_opt = torch.tensor(v, requires_grad=True)
     solver = LinearDirectSolve.apply
     for _ in range(n_iter):
